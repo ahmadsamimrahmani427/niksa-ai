@@ -1,0 +1,6 @@
+{
+  "name": "Niksa AI Studio",
+  "description": "AI Creative Workspace created by Ahmad Samim Rahmani. Featuring Text-to-Image, AI Image Editor, Canvas AI Designer, and automated Audio-to-Video Timeline Studio.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

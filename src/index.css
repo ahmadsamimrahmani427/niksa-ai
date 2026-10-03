@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #f1f5f9;
+    background-color: #030712;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Dedicated High-Visibility Timeline Scrollbar (Requirement 9) */
+.timeline-scrollbar::-webkit-scrollbar {
+  height: 12px;
+}
+.timeline-scrollbar::-webkit-scrollbar-track {
+  background: #030712;
+  border-top: 1px solid #1e293b;
+  border-radius: 6px;
+}
+.timeline-scrollbar::-webkit-scrollbar-thumb {
+  background: #0284c7;
+  border-radius: 6px;
+  border: 2px solid #030712;
+}
+.timeline-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+.timeline-scrollbar {
+  scrollbar-width: auto;
+  scrollbar-color: #0284c7 #030712;
+}
+
+/* Ken burns animation styles for preview */
+@keyframes kenBurnsIn {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.15) translate(-1%, -1%); }
+}
+
+@keyframes kenBurnsOut {
+  0% { transform: scale(1.18) translate(1%, 1%); }
+  100% { transform: scale(1) translate(0, 0); }
+}
+
+@keyframes panRight {
+  0% { transform: scale(1.1) translateX(-3%); }
+  100% { transform: scale(1.1) translateX(3%); }
+}
+
+@keyframes panLeft {
+  0% { transform: scale(1.1) translateX(3%); }
+  100% { transform: scale(1.1) translateX(-3%); }
+}
+
+.anim-ken-burns-in {
+  animation: kenBurnsIn 12s ease-in-out infinite alternate;
+}
+.anim-ken-burns-out {
+  animation: kenBurnsOut 12s ease-in-out infinite alternate;
+}
+.anim-pan-right {
+  animation: panRight 12s ease-in-out infinite alternate;
+}
+.anim-pan-left {
+  animation: panLeft 12s ease-in-out infinite alternate;
+}
+
+/* Glassmorphism utilities */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-dropdown {
+  background: rgba(10, 15, 28, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+}
